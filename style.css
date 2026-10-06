@@ -1,0 +1,380 @@
+/* 따뜻한 카페 색상과 기본 글꼴 */
+:root {
+  color-scheme: light;
+  font-family: '맑은 고딕', sans-serif;
+  color: #3f3026;
+  background: #faf6f0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  padding: 40px 16px;
+  background: #faf6f0;
+}
+
+header,
+main {
+  width: 100%;
+  max-width: 520px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+header {
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+header div {
+  font-size: 48px;
+  line-height: 1.2;
+  transform-origin: center bottom;
+  animation: cafe-logo-sway 3s ease-in-out infinite;
+}
+
+@keyframes cafe-logo-sway {
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+
+  25% {
+    transform: rotate(-7deg);
+  }
+
+  75% {
+    transform: rotate(7deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  header div {
+    animation: none;
+  }
+
+  button[type='submit'] {
+    transition: none;
+  }
+
+  button[type='submit']:hover {
+    transform: none;
+  }
+
+  .tab-count.badge-pop {
+    animation: none;
+  }
+}
+
+header h1 {
+  margin: 8px 0;
+  color: #6b4226;
+  font-size: 30px;
+}
+
+.tab-menu {
+  display: flex;
+  gap: 12px;
+  margin: 18px 0 14px;
+  border-bottom: 1px solid #eadfd2;
+}
+
+.tab-button {
+  flex: 1;
+  min-height: 44px;
+  padding: 10px 6px;
+  border: 0;
+  border-bottom: 3px solid transparent;
+  border-radius: 0;
+  background: transparent;
+  color: #aa927c;
+  font-size: 15px;
+  white-space: nowrap;
+}
+
+.tab-button[aria-selected='true'] {
+  border-bottom-color: #6b4226;
+  color: #6b4226;
+}
+
+.tab-button:hover {
+  background: #f8f2eb;
+  color: #6b4226;
+}
+
+.tab-count {
+  display: inline-flex;
+  min-width: 22px;
+  height: 22px;
+  align-items: center;
+  justify-content: center;
+  margin-left: 4px;
+  padding: 0 6px;
+  border-radius: 999px;
+  background: #6b4226;
+  color: #fff;
+  font-size: 12px;
+  line-height: 1;
+}
+
+.tab-count.badge-pop {
+  animation: order-count-pop 520ms ease-out;
+}
+
+@keyframes order-count-pop {
+  0%,
+  100% {
+    transform: translateY(0) scale(1);
+  }
+
+  35% {
+    transform: translateY(-6px) scale(1.18);
+  }
+
+  68% {
+    transform: translateY(0) scale(0.94);
+  }
+}
+
+header p {
+  margin: 0;
+  color: #765d4a;
+}
+
+main {
+  padding: 28px;
+  border: 1px solid #eadfd2;
+  border-radius: 16px;
+  background: #fffdf9;
+  box-shadow: 0 8px 24px rgb(78 53 33 / 10%);
+}
+
+form > div {
+  margin-bottom: 18px;
+}
+
+form > div > label {
+  display: block;
+  margin-bottom: 7px;
+  color: #513b2b;
+  font-weight: 600;
+}
+
+input:not([type='radio']):not([type='checkbox']),
+select,
+textarea {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #d8c8b8;
+  border-radius: 8px;
+  background: #fff;
+  color: inherit;
+  font: inherit;
+}
+
+textarea {
+  min-height: 96px;
+  resize: vertical;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: #6b4226;
+  outline: none;
+  box-shadow: 0 0 0 3px rgb(107 66 38 / 16%);
+}
+
+fieldset {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px 12px;
+  min-width: 0;
+  margin: 0 0 18px;
+  padding: 14px;
+  border: 1px solid #eadfd2;
+  border-radius: 10px;
+}
+
+legend {
+  padding: 0 6px;
+  color: #513b2b;
+  font-weight: 600;
+}
+
+fieldset input[type='radio'],
+fieldset input[type='checkbox'] {
+  flex: 0 0 auto;
+  margin: 0 -7px 0 0;
+  accent-color: #6b4226;
+}
+
+fieldset label {
+  line-height: 1.5;
+}
+
+#estimated-price {
+  margin: 24px 0 16px;
+  color: #6b4226;
+  font-size: 24px;
+  font-weight: 700;
+  text-align: center;
+}
+
+button {
+  min-height: 44px;
+  padding: 10px 16px;
+  border: 1px solid #6b4226;
+  border-radius: 8px;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 160ms ease, color 160ms ease, transform 160ms ease;
+}
+
+button[type='submit'] {
+  width: 100%;
+  background: #6b4226;
+  color: #fff;
+}
+
+button[type='submit']:hover {
+  background: #855a3a;
+  transform: translateY(-2px);
+}
+
+button[type='reset'] {
+  display: block;
+  margin: 10px auto 0;
+  background: #fff;
+  color: #6b4226;
+}
+
+button[type='reset']:hover {
+  background: #f5eee6;
+}
+
+button:focus-visible {
+  outline: 3px solid rgb(107 66 38 / 30%);
+  outline-offset: 2px;
+}
+
+#order-confirmation {
+  margin-top: 18px;
+  padding: 14px;
+  border-radius: 8px;
+  background: #e8f5df;
+  color: #28613a;
+}
+
+#orders-panel h2 {
+  margin: 0 0 16px;
+  color: #6b4226;
+  font-size: 22px;
+}
+
+#order-list {
+  display: grid;
+  gap: 12px;
+}
+
+.empty-orders {
+  margin: 0;
+  padding: 28px 12px;
+  color: #8b7562;
+  text-align: center;
+}
+
+.order-card {
+  padding: 14px 14px 14px 18px;
+  border-left: 4px solid #6b4226;
+  border-radius: 8px;
+  background: #faf6f0;
+  box-shadow: 0 3px 10px rgb(78 53 33 / 7%);
+  overflow-wrap: anywhere;
+}
+
+.order-card-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.order-card-header h3 {
+  margin: 2px 0 0;
+  color: #513b2b;
+  font-size: 16px;
+}
+
+.order-card p {
+  margin: 10px 0 0;
+}
+
+.order-card .order-card-meta {
+  color: #806c59;
+  font-size: 13px;
+}
+
+.order-cancel-button {
+  min-height: 32px;
+  flex: 0 0 auto;
+  padding: 4px 10px;
+  border-color: #c9b6a4;
+  background: #fffdf9;
+  color: #6b4226;
+  font-size: 13px;
+}
+
+#order-summary {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 20px;
+  padding-top: 16px;
+  border-top: 1px solid #eadfd2;
+}
+
+#orders-total {
+  margin: 0;
+  color: #6b4226;
+  font-weight: 700;
+}
+
+#clear-orders {
+  background: #fff;
+  color: #6b4226;
+}
+
+/* 속성 또는 클래스로 숨김 상태를 표시 */
+[hidden],
+.hidden {
+  display: none !important;
+}
+
+/* 좁은 화면에서는 여백을 줄여 입력 영역을 확보 */
+@media (max-width: 480px) {
+  body {
+    padding: 24px 12px;
+  }
+
+  main {
+    padding: 20px 16px;
+  }
+
+  header h1 {
+    font-size: 26px;
+  }
+
+  fieldset {
+    gap: 9px 10px;
+  }
+}
